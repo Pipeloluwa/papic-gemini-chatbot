@@ -76,45 +76,43 @@ function App() {
       }
 
 
-      if (userMessage.trim() !== '') {
-        // +++++++++ COPY THE message OBJECT AND ADD NEW ONE ++++++++
-        const keepUserMessage= userMessage;
-        let newUserMessage= messages.slice();
-        newUserMessage.push({"user": userMessage});
+      // +++++++++ COPY THE message OBJECT AND ADD NEW ONE ++++++++
+      const keepUserMessage= userMessage;
+      let newUserMessage= messages.slice();
+      newUserMessage.push({"user": userMessage});
 
-        setMessages(newUserMessage);
-        setUserMessage("");
-        setIsProcessing(true);
-
-
-        // +++++++++++++++++ TO SEND MESSAGE +++++++++++++++++
-        // const result = await model.generateContent(keepUserMessage);
-
-        // +++++++++++++++++ TO CHAT AND KEEP CONVERSATION +++++++++++++++++
-        const chatResult= await modelChat.sendMessage(keepUserMessage);
-        const response = await chatResult.response;
-        const text = response.text();
-        
-        newUserMessage= newUserMessage.slice();
-        newUserMessage.push({"chatbot": text});
-
-        setMessages(newUserMessage);
-
-        setIsProcessing(false);
+      setMessages(newUserMessage);
+      setUserMessage("");
+      setIsProcessing(true);
 
 
-        // +++++++++++++= IF YOU WISH TO DELETE THE COOKIE +++++++++++++++
-        // const expirationDate = new Date(0); // Set expiration date to the past
-        // document.cookie = `chatCookie=; expires=${expirationDate.toUTCString()}; path=/`;
+      // +++++++++++++++++ TO SEND MESSAGE +++++++++++++++++
+      // const result = await model.generateContent(keepUserMessage);
 
-        // STORING THE WHOLE CONVERSATION IN COOKIE FOR 7000 DAYS, YOU HAVE TO ATTACH A DATABASE TO IT TO KEEP ALIVE THE COOKIE
-        const days= 7000;
-        const expirationDate = new Date();
-        expirationDate.setDate(expirationDate.getDate() + days);
-  
-        const cookieValue = encodeURIComponent(JSON.stringify(newUserMessage)) + (days ? `; expires=${expirationDate.toUTCString()}` : '');
-        document.cookie = `${"chatCookie"}=${cookieValue}; path=/`;
-      }
+      // +++++++++++++++++ TO CHAT AND KEEP CONVERSATION +++++++++++++++++
+      const chatResult= await modelChat.sendMessage(keepUserMessage);
+      const response = await chatResult.response;
+      const text = response.text();
+      
+      newUserMessage= newUserMessage.slice();
+      newUserMessage.push({"chatbot": text});
+
+      setMessages(newUserMessage);
+
+      setIsProcessing(false);
+
+
+      // +++++++++++++= IF YOU WISH TO DELETE THE COOKIE +++++++++++++++
+      // const expirationDate = new Date(0); // Set expiration date to the past
+      // document.cookie = `chatCookie=; expires=${expirationDate.toUTCString()}; path=/`;
+
+      // STORING THE WHOLE CONVERSATION IN COOKIE FOR 7000 DAYS, YOU HAVE TO ATTACH A DATABASE TO IT TO KEEP ALIVE THE COOKIE
+      const days= 7000;
+      const expirationDate = new Date();
+      expirationDate.setDate(expirationDate.getDate() + days);
+
+      const cookieValue = encodeURIComponent(JSON.stringify(newUserMessage)) + (days ? `; expires=${expirationDate.toUTCString()}` : '');
+      document.cookie = `${"chatCookie"}=${cookieValue}; path=/`;
 
 
     } catch (error) {
