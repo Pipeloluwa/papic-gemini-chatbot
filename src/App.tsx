@@ -14,7 +14,7 @@ function App() {
   const genAI = new GoogleGenerativeAI(MODEL_API_KEY);
 
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
-  const [modelChat] = useState(model.startChat());
+  const [modelChat, setModelChat] = useState(model.startChat());
 
 
   const divScrollRef:LegacyRef<HTMLDivElement> = useRef(null);
@@ -118,7 +118,8 @@ function App() {
 
 
     } catch (error) {
-      alert("Something went wrong, please try again");
+      setModelChat(model.startChat());
+      alert("Bad request or something went wrong, please try again");
       setIsProcessing(false);
       return;
     }
