@@ -194,7 +194,7 @@ function App() {
 
 
         <div className='absolute left-0 right-0 bottom-[25px] flex h-[10%] xl:mx-[30%] lg:mx-[20%] sm:mx-[10%] mx-[4%] items-end justify-center gap-x-4'>
-          <textarea value={userMessage} onChange={(e) => setUserMessage(e.target.value)} rows={1} name="" id="" className='w-full resize-none p-4 rounded-2xl overflow-clip shadow-sm shadow-black outline-none'>
+          <textarea placeholder='Type Here...' value={userMessage} onChange={(e) => setUserMessage(e.target.value)} rows={1} name="" id="" className='w-full resize-none p-4 rounded-2xl overflow-clip shadow-sm shadow-black outline-none'>
 
           </textarea>
 
