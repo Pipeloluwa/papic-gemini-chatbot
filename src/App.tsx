@@ -194,13 +194,13 @@ function App() {
 
         <div className='fixed left-0 right-0 bottom-[15px] sm:h-[20%] h-[15%] xl:mx-[30%] lg:mx-[20%] sm:mx-[10%] mx-[4%] flex items-center justify-center gap-x-4'>
           <div className='w-full rounded-2xl bg-clip-border overflow-hidden bg-white shadow-sm shadow-black'>
-            <textarea placeholder='Type Here...' value={userMessage} onChange={(e) => setUserMessage(e.target.value)} rows={3} name="" id="" className='bg-white h-full w-full resize-none p-4 pr-[75px] overflow-y-scroll outline-none'>
+            <textarea placeholder='Type Here...' value={userMessage} onChange={(e) => setUserMessage(e.target.value)} rows={3} name="" id="" className='bg-white h-full w-full resize-none p-4 pr-[78px] overflow-y-scroll outline-none'>
 
             </textarea>     
           </div>
 
 
-          <div className='absolute right-0 top-0 bottom-0 mr-6 flex h-full items-center justify-center'>
+          <div className='absolute right-0 top-0 bottom-0 mr-5 flex h-full items-center justify-center'>
               <button onClick={sendUserMessage} className={`${userMessage.trim() === '' ? 'pointer-events-none bg-[#5989b9] hover:bg-none': 'cursor-pointer'} hover:bg-[#1973ce] bg-[#0a5096] p-4 rounded-full shadow-sm shadow-black`}>
               <IoSend className='cursor-pointer size-[30px] text-white'/>
             </button>
