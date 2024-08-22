@@ -135,7 +135,7 @@ function App() {
   return (
     <>
 
-      <div className='relative overflow-hidden h-screen mx-auto sm:p-6 '>
+      <div className='relative overflow-hidden h-[100svh] mx-auto sm:p-6 '>
 
         <div className='xl:mx-[25%] lg:mx-[15%] sm:mx-[5%] bg-gradient-to-b from-[#1565af] to-[#00182e] absolute left-0 right-0 top-[10px] bottom-[10px] rounded-2xl' />
 
