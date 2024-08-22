@@ -194,7 +194,7 @@ function App() {
 
         <div className='fixed left-0 right-0 bottom-[15px] sm:h-[20%] h-[15%] xl:mx-[30%] lg:mx-[20%] sm:mx-[10%] mx-[4%] flex items-center justify-center gap-x-4'>
           <div className='w-full rounded-2xl bg-clip-border overflow-hidden bg-white shadow-sm shadow-black'>
-            <textarea placeholder='Type Here...' value={userMessage} onChange={(e) => setUserMessage(e.target.value)} rows={3} name="" id="" className='bg-white h-full w-full resize-none p-4 pr-[85px] overflow-y-scroll outline-none'>
+            <textarea placeholder='Type Here...' value={userMessage} onChange={(e) => setUserMessage(e.target.value)} rows={3} name="" id="" className='bg-white h-full w-full resize-none p-4 sm:pr-[85px] pr-[95px] overflow-y-scroll outline-none'>
 
             </textarea>     
           </div>
