@@ -138,7 +138,7 @@ function App() {
 
         <div className='xl:mx-[25%] lg:mx-[15%] sm:mx-[5%] bg-gradient-to-b from-[#1565af] to-[#00182e] absolute left-0 right-0 top-[10px] bottom-[10px] rounded-2xl' />
 
-        <div ref={divScrollRef} className='absolute left-0 right-0 top-[13px] bottom-[25px] pt-6 pb-8 flex flex-col xl:px-[30%] lg:px-[20%] sm:px-[10%] px-[4%] sm:h-[85%] h-[90%] gap-y-4 overflow-hidden overflow-y-scroll scroll-smooth '>
+        <div ref={divScrollRef} className='absolute left-0 right-0 top-[13px] bottom-[35px] pt-6 pb-8 flex flex-col xl:px-[30%] lg:px-[20%] sm:px-[10%] px-[4%] sm:h-[77%] h-[81%] gap-y-4 overflow-hidden overflow-y-scroll scroll-smooth '>
           {
             messages.map(
               (item, index) => {
@@ -192,14 +192,21 @@ function App() {
 
 
 
-        <div className='absolute left-0 right-0 bottom-[25px] flex h-[10%] xl:mx-[30%] lg:mx-[20%] sm:mx-[10%] mx-[4%] items-end justify-center gap-x-4'>
-          <textarea placeholder='Type Here...' value={userMessage} onChange={(e) => setUserMessage(e.target.value)} rows={1} name="" id="" className='w-full resize-none p-4 rounded-2xl overflow-clip shadow-sm shadow-black outline-none'>
+        <div className='fixed left-0 right-0 bottom-[15px] sm:h-[20%] h-[15%] xl:mx-[30%] lg:mx-[20%] sm:mx-[10%] mx-[4%] flex items-center justify-center gap-x-4'>
+          <div className='w-full rounded-2xl bg-clip-border overflow-hidden bg-white shadow-sm shadow-black'>
+            <textarea placeholder='Type Here...' value={userMessage} onChange={(e) => setUserMessage(e.target.value)} rows={3} name="" id="" className='bg-white h-full w-full resize-none p-4 pr-[75px] overflow-y-scroll outline-none'>
 
-          </textarea>
+            </textarea>     
+          </div>
 
-          <button onClick={sendUserMessage} className={`${userMessage.trim() === '' ? 'pointer-events-none bg-gray-300/75 hover:bg-none': 'cursor-pointer'} hover:bg-gray-200 bg-white p-4 rounded-full shadow-sm shadow-black`}>
-            <IoSend className='cursor-pointer size-[30px] text-[#007FFF]'/>
-          </button>
+
+          <div className='absolute right-0 top-0 bottom-0 mr-6 flex h-full items-center justify-center'>
+              <button onClick={sendUserMessage} className={`${userMessage.trim() === '' ? 'pointer-events-none bg-[#5989b9] hover:bg-none': 'cursor-pointer'} hover:bg-[#1973ce] bg-[#0a5096] p-4 rounded-full shadow-sm shadow-black`}>
+              <IoSend className='cursor-pointer size-[30px] text-white'/>
+            </button>
+          </div>
+
+          
 
         </div>
 
