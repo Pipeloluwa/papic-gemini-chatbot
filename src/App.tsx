@@ -6,6 +6,7 @@ import { IoSend } from 'react-icons/io5'
 
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { knowledgeTree } from './knowledgeTree';
 
 function App() {
   // Access your API key as an environment variable (see "Set up your API key" above)
@@ -90,7 +91,8 @@ function App() {
       // const result = await model.generateContent(keepUserMessage);
 
       // +++++++++++++++++ TO CHAT AND KEEP CONVERSATION +++++++++++++++++
-      const chatResult= await modelChat.sendMessage(keepUserMessage);
+      const guideWords= `Understand these information and answers in this bracket (${knowledgeTree.crm_support.slice()})  and use them to answer this question or request:  `
+      const chatResult= await modelChat.sendMessage(guideWords + keepUserMessage);
       const response = await chatResult.response;
       const text = response.text();
       
