@@ -149,7 +149,7 @@ function App() {
                       return (
                         <div key={`chatbot ${index}`} className='flex flex-col gap-y-2 items-start'>
                           <h1 className='flex justify-start text-[#F0F8FF] pl-2 font-bold'>
-                            Assistant Bot
+                            Collectors Vault
                           </h1>
 
                           <h1 className='text-black flex justify-start bg-[#F0F8FF] min-h-[50px] md:max-w-[500px] max-w-[280px] rounded-2xl p-4'>

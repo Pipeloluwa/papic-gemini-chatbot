@@ -12,6 +12,7 @@
   "dependencies": {
     "@google/generative-ai": "^0.17.0",
     "@types/node": "^22.5.0",
+    "chatbot-web": "file:",
     "dotenv": "^16.4.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
